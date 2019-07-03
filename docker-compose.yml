@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  
+  proxy-unsecured:
+    image: squid
+    ports:
+      - "3128:3128"
+
+  proxy-secured:
+    image: squid
+    command: -f /etc/squid/squid-secured.conf
+    ports:
+      - "3129:3128"
